@@ -9,7 +9,6 @@
 import SpriteKit
 import AVFoundation     //音楽再生用
 
-
 class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
     
     var scrollNode:SKNode!
@@ -70,7 +69,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
         setupBird()
         setupItem()
         setupScoreLabel()
-        setupSoundEffect()
     }
     
     // 画面をタップした時に呼ばれる
@@ -327,7 +325,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
             //　アイテムを生成
             let itemA = SKSpriteNode(texture: ringo)
             // サイズを変更
-            itemA.size = CGSize(width: itemA.size.height * 0.1 ,height: itemA.size.height * 0.1)
+            itemA.size = CGSize(width: itemA.size.height * 0.2 ,height: itemA.size.height * 0.2)
             itemA.position = CGPoint(x: 0, y: slit_length * 3.3 )
             itemA.physicsBody = SKPhysicsBody(rectangleOf: birdSize)
             itemA.physicsBody?.categoryBitMask = self.itemCategoryA
@@ -392,10 +390,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
         self.addChild(itemLabelNode)
     }
     
-    func setupSoundEffect() {
-        
-    }
-    
     // SKPhysicsContactDelegateのメソッド。衝突したときに呼ばれる
     func didBegin(_ contact: SKPhysicsContact) {
         // ゲームオーバーのときは何もしない
@@ -408,15 +402,14 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
             print("ScoreUp")
             score += 1
             scoreLabelNode.text = "Score:\(score)"
-
-
+            
             // 効果音を再生する
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: audioPath as URL)
                 audioPlayer.delegate = self
                 audioPlayer.play()
             }
-                // playerを作成した時にエラーがthrowされたらこっち来る
+            // playerを作成した時にエラーがthrowされたらこっち来る
             catch {
                 print("AVAudioPlayer error")
             }
@@ -443,7 +436,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
                 audioPlayer.delegate = self
                 audioPlayer.play()
             }
-                // playerを作成した時にエラーがthrowされたらこっち来る
+            // playerを作成した時にエラーがthrowされたらこっち来る
             catch {
                 print("AVAudioPlayer error")
             }
@@ -454,17 +447,22 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
             // 壁か地面と衝突した
             print("GameOver")
             
+            // 効果音
+            let sound = SKAction.playSoundFileNamed("hyun1", waitForCompletion: false)
+            // アイテム取得音
+            run(sound)
+            /*
             // 効果音を再生する
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: audioPathGameover as URL)
                 audioPlayer.delegate = self
                 audioPlayer.play()
             }
-                // playerを作成した時にエラーがthrowされたらこっち来る
+            // playerを作成した時にエラーがthrowされたらこっち来る
             catch {
                 print("AVAudioPlayer error")
             }
-            
+            */
             // スクロールを停止させる
             scrollNode.speed = 0
             
