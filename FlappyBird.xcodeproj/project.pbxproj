@@ -12,6 +12,10 @@
 		F96609AB21FED78500C203FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96609A921FED78500C203FC /* Main.storyboard */; };
 		F96609AD21FED78800C203FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96609AC21FED78800C203FC /* Assets.xcassets */; };
 		F96609B021FED78800C203FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96609AE21FED78800C203FC /* LaunchScreen.storyboard */; };
+		F96609B821FED90300C203FC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96609B721FED90300C203FC /* GameScene.swift */; };
+		F96609DC220857F400C203FC /* decision26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F96609DB220857F400C203FC /* decision26.mp3 */; };
+		F96609DE22085D8400C203FC /* kira2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F96609DD22085D8400C203FC /* kira2.mp3 */; };
+		F96609E022085D9B00C203FC /* hyun1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F96609DF22085D9B00C203FC /* hyun1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		F96609AC21FED78800C203FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F96609AF21FED78800C203FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F96609B121FED78800C203FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F96609B721FED90300C203FC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F96609DB220857F400C203FC /* decision26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = decision26.mp3; sourceTree = "<group>"; };
+		F96609DD22085D8400C203FC /* kira2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kira2.mp3; sourceTree = "<group>"; };
+		F96609DF22085D9B00C203FC /* hyun1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hyun1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +62,16 @@
 		F96609A421FED78500C203FC /* FlappyBird */ = {
 			isa = PBXGroup;
 			children = (
+				F96609DF22085D9B00C203FC /* hyun1.mp3 */,
+				F96609DD22085D8400C203FC /* kira2.mp3 */,
+				F96609DB220857F400C203FC /* decision26.mp3 */,
 				F96609A521FED78500C203FC /* AppDelegate.swift */,
 				F96609A721FED78500C203FC /* ViewController.swift */,
 				F96609A921FED78500C203FC /* Main.storyboard */,
 				F96609AC21FED78800C203FC /* Assets.xcassets */,
 				F96609AE21FED78800C203FC /* LaunchScreen.storyboard */,
 				F96609B121FED78800C203FC /* Info.plist */,
+				F96609B721FED90300C203FC /* GameScene.swift */,
 			);
 			path = FlappyBird;
 			sourceTree = "<group>";
@@ -122,8 +134,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96609DE22085D8400C203FC /* kira2.mp3 in Resources */,
 				F96609B021FED78800C203FC /* LaunchScreen.storyboard in Resources */,
 				F96609AD21FED78800C203FC /* Assets.xcassets in Resources */,
+				F96609DC220857F400C203FC /* decision26.mp3 in Resources */,
+				F96609E022085D9B00C203FC /* hyun1.mp3 in Resources */,
 				F96609AB21FED78500C203FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96609B821FED90300C203FC /* GameScene.swift in Sources */,
 				F96609A821FED78500C203FC /* ViewController.swift in Sources */,
 				F96609A621FED78500C203FC /* AppDelegate.swift in Sources */,
 			);
@@ -291,7 +307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.rebirthbtn24.FlappyBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.rebirthbtn24.FlappyBird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
