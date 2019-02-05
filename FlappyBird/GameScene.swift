@@ -443,6 +443,14 @@ class GameScene: SKScene , SKPhysicsContactDelegate , AVAudioPlayerDelegate{
             
             itemANode.removeAllChildren()
             
+            // ベストスコア更新か確認する
+            var bestScore = userDefaults.integer(forKey: "BEST")
+            if score > bestScore {
+                bestScore = score
+                bestScoreLabelNode.text = "Best Score:\(bestScore)"
+                userDefaults.set(bestScore, forKey: "BEST")
+                userDefaults.synchronize()
+            }
         } else {
             // 壁か地面と衝突した
             print("GameOver")
